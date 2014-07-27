@@ -15,6 +15,20 @@
 			<a href="stripepayment/example/render">Raw Html rendering example from using swig</a>
 		</li>
 	</ol>
+
+	<hr>
+	<form action="/charge" method="POST">
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+	    data-image="/square-image.png"
+	    data-name="Demo Site"
+	    data-description="2 widgets ($20.00)"
+	    data-amount="2000">
+	  </script>
+	</form>
+	<hr>
+
 	<h3><img src="/stripepayment/assets/img/logo.png" /></h3>
 	</br>
 	<p class="alert alert-info">You can find your package in /packages/stripepayment</p>

@@ -11,5 +11,11 @@
     "npm": "1.4.x"
   },
   "dependencies": {},
-  "license": "MIT"
+  "license": "MIT",
+  "readme": "README: system",
+  "readmeFilename": "README.md",
+  "_id": "system@0.0.0",
+  "scripts": {},
+  "_shasum": "f288a4bf85eebebd376b44fef2a04d2ab29b0ba8",
+  "_from": "/Users/eddie/Documents/programming/attobyte/packages/system"
 }

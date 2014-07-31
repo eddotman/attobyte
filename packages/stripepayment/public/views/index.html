@@ -1,6 +1,9 @@
 <div class="" data-ng-controller="StripepaymentController">
 	<h1>Example view from your new awesome package</h1>
 	<h2>Package: {{package.name}}</h2>
+	<p>
+		{{global.user.name}}
+	</p>
 	<ol>
 		<li>
 			<a href="stripepayment/example/anyone">Server route that anyone can access</a>
@@ -21,10 +24,9 @@
 	  <script
 	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 	    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-	    data-image="/square-image.png"
-	    data-name="Demo Site"
-	    data-description="2 widgets ($20.00)"
-	    data-amount="2000">
+	    data-name="Attobyte"
+	    data-description="1 storybook ($5.00)"
+	    data-amount="500">
 	  </script>
 	</form>
 	<hr>

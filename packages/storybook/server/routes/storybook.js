@@ -1,5 +1,7 @@
 'use strict';
 
+var storybook = require('../controllers/storybook');
+
 // The Package is past automatically as first parameter
 module.exports = function(Storybook, app, auth, database) {
 
@@ -27,4 +29,7 @@ module.exports = function(Storybook, app, auth, database) {
             res.send(html);
         });
     });
+
+    app.route('/writeBook')
+      .post(storybook.writeBook);
 };

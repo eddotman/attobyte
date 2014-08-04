@@ -4,7 +4,8 @@ angular.module('mean.storybook').controller('StorybookController', ['$scope', 'G
     function($scope, Global, Storybook) {
         $scope.global = Global;
         $scope.package = {
-            name: 'storybook'
+            name: 'storybook',
+            test_data: 'test'
         };
     }
 ]);

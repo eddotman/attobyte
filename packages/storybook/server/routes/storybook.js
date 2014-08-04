@@ -3,6 +3,10 @@
 // The Package is past automatically as first parameter
 module.exports = function(Storybook, app, auth, database) {
 
+    app.get('/storybook/view/auth', auth.requiresLogin, function(req, res, next) {
+        res.send('Only authenticated users can access this view!');
+    });
+
     app.get('/storybook/example/anyone', function(req, res, next) {
         res.send('Anyone can access this');
     });

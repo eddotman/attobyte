@@ -19,6 +19,7 @@ angular.module('mean.storybook')
         ];
 
         $scope.updatePages = function() {
+          if ($scope.numPages > 20) {$scope.numPages = 20;} //Max pages is 20
           if ($scope.numPages > $scope.pages.length) {
             for (var i = $scope.pages.length; i < $scope.numPages; i++) {
               $scope.pages.push({

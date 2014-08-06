@@ -1,5 +1,27 @@
 <div data-ng-controller="StorybookController">
   <p>
+    Name: <input type="text" ng-model="bookName">
+  </p>
+  <p>
+    # of Pages: <input type="text" ng-model="numPages" ng-pattern="/^\d+$/" ng-change="updatePages()">
+  </p>
+
+
+  <div ng-repeat="page in pages">
+    <h3>Page {{$index+1}}</h3>
+
+    <p>
+      Story: <textarea ng-model="page.story"></textarea>
+    </p>
+    <p>
+      Question: <input type="text" ng-model="page.question">
+    </p>
+    <p>
+      Answer: <input type="text" ng-model="page.answer">
+    </p>
+  </div>
+
+  <p>
       <button ng-click="write()">make book</button>
   </p>
 </div>

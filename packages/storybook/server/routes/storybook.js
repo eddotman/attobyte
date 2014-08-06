@@ -30,6 +30,7 @@ module.exports = function(Storybook, app, auth, database) {
         });
     });
 
+    //custom routes
     app.route('/writeBook')
       .post(storybook.writeBook);
 };

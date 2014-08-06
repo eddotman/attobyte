@@ -4,8 +4,7 @@ var mongoose = require('mongoose');
 var Storybook = mongoose.model('Storybook');
 
 exports.writeBook = function(req, res) {
-  var sb = new Storybook();
-  sb.name = 'test';
-  sb.save();
-  res.end('DERP');
+  var sb = new Storybook(req.body);
+  sb.save(); //TODO error checking
+  res.end('Book successfully created');
 };

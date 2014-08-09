@@ -8,3 +8,7 @@ exports.writeBook = function(req, res) {
   sb.save(); //TODO error checking
   res.end('Book successfully created');
 };
+
+exports.readBook = function(req, res) {
+  Storybook.findOne({name: req.bookName})
+}

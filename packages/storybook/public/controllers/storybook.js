@@ -30,10 +30,7 @@ angular.module('mean.storybook')
             }
           } else if ($scope.numPages < $scope.pages.length) {
             $scope.pages = $scope.pages.slice(0, $scope.numPages-1);
-          } else {
-            // Do nothing
           }
-
         };
 
         $scope.write = function() {

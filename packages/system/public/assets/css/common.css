@@ -48,3 +48,29 @@ footer p {
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+body {
+	font-family: 'Source Sans Pro';
+}
+
+section {
+	width: 100%;
+}
+
+.big-block {
+	width:100%;
+	background: url('/system/assets/img/desk.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	color:white;
+	margin: 2em 0;
+	padding: 15em;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Oswald';
+}
+
+.navbar {
+	color: white;
+}

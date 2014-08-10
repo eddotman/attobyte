@@ -12,3 +12,9 @@ exports.writeBook = function(req, res) {
 exports.readBook = function(req, res) {
   Storybook.findOne({name: req.bookName});
 };
+
+exports.listBooks = function(req, res) {
+  Storybook.find({}, function(err, storybooks){
+    res.send(storybooks);
+  });
+};

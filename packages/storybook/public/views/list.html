@@ -1,5 +1,26 @@
 <div data-ng-controller="StorybookListController">
-  <p>
-    Test!
-  </p>
+  <table class="table table-hover">
+    <tr>
+      <th>
+        Book Title
+      </th>
+      <th>
+        Number of Pages
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+    <tr ng-repeat="book in storybooks">
+      <td>
+        {{book.bookName}}
+      </td>
+      <td>
+        {{book.numPages}}
+      </td>
+      <td>
+        <button ng-click="readBook(book._id)" class="btn btn-default">Read Book</button>
+      </td>
+    </tr>
+  </table>
 </div>

@@ -14,6 +14,10 @@ angular.module('mean.storybook').config(['$stateProvider',
           .state('list', {
               url: '/storybook/list',
               templateUrl: 'storybook/views/list.html'
+          })
+          .state('edit', {
+              url: '/storybook/edit',
+              templateUrl: 'storybook/views/edit/{bookId}.html'
           });
     }
 ]);

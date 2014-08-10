@@ -1,0 +1,36 @@
+<div data-ng-controller="StorybookEditController">
+  <form class="form form-horizontal">
+    <div class="form-group">
+      <label class="control-label">Book Title:</label>
+      <input class="form-control" type="text" ng-model="bookName">
+    </div>
+    <div class="form-group">
+      <label class="control-label"># of Pages (max=20):</label>
+      <input class="form-control" type="text" ng-model="numPages" ng-pattern="/^\d+$/" ng-change="updatePages()">
+    </div>
+
+    <br><br>
+
+    <div ng-repeat="page in pages">
+      <h4>Page {{$index+1}}</h4><br>
+      <div class="form-group">
+        <label class="control-label">Story:</label>
+        <textarea class="form-control" rows="10" ng-model="page.story"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Question:</label>
+        <input class="form-control" type="text" ng-model="page.question">
+      </div>
+      <div class="form-group">
+        <label class="control-label">Answer:</label>
+        <input class="form-control" type="text" ng-model="page.answer">
+      </div>
+
+      <br><br>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-lg btn-success" ng-click="write()">Make Book</button>
+    </div>
+  </form>
+</div>

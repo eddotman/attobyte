@@ -9,8 +9,10 @@ exports.writeBook = function(req, res) {
   res.end('Book successfully created');
 };
 
-exports.readBook = function(req, res) {
-  Storybook.findOne({name: req.bookName});
+exports.viewBook = function(req, res) {
+  Storybook.findById(mongoose.Types.ObjectId(req.body.bookId), function(err, storybook){
+    res.send(storybook);
+  });
 };
 
 exports.listBooks = function(req, res) {

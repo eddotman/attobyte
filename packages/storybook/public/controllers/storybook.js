@@ -54,6 +54,14 @@ angular.module('mean.storybook')
 
       $scope.bookId = $stateParams.bookId;
       $scope.bookPage = $stateParams.bookPage;
+
+      $http.post('/viewBook', {
+        bookId: $scope.bookId
+      })
+        .success(function(response) {
+          $scope.book = response;
+          $scope.page = $scope.book.pages[$scope.bookPage-1];
+        });
     }
   ])
   .controller('StorybookListController', ['$scope', 'Global', 'Storybook', '$http',
@@ -72,5 +80,14 @@ angular.module('mean.storybook')
       $scope.readBook = function(id) {
         window.location = '/#!/storybook/view/' + id + '/1';
       };
+    }
+  ])
+  .controller('StorybookEditController', ['$scope', 'Global', 'Storybook', '$http',
+    function($scope, Global, Storybook, $http) {
+      $scope.global = Global;
+      $scope.package = {
+          name: 'storybook'
+      };
+
     }
   ]);

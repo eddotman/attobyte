@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mean.storybook')
-  .controller('StorybookController', ['$scope', 'Global', 'Storybook', '$http',
+  .controller('StorybookWriteController', ['$scope', 'Global', 'Storybook', '$http',
     function($scope, Global, Storybook, $http) {
         $scope.global = Global;
         $scope.package = {
@@ -44,4 +44,23 @@ angular.module('mean.storybook')
             });
         };
     }
-]);
+])
+  .controller('StorybookViewController', ['$scope', 'Global', 'Storybook', '$http', '$stateParams',
+    function($scope, Global, Storybook, $http, $stateParams) {
+        $scope.global = Global;
+        $scope.package = {
+            name: 'storybook'
+        };
+
+        $scope.bookId = $stateParams.bookId;
+        $scope.bookPage = $stateParams.bookPage;
+    }
+  ])
+  .controller('StorybookListController', ['$scope', 'Global', 'Storybook', '$http',
+    function($scope, Global, Storybook, $http) {
+        $scope.global = Global;
+        $scope.package = {
+            name: 'storybook'
+        };
+    }
+  ]);

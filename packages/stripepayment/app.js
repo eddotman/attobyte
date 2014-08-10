@@ -17,12 +17,12 @@ Stripepayment.register(function(app, auth, database) {
     Stripepayment.routes(app, auth, database);
 
     //We are adding a link to the main menu for all authenticated users
-    Stripepayment.menus.add({
-        title: 'My Payments',
-        link: 'stripepayment example page',
-        roles: ['authenticated'],
-        menu: 'main'
-    });
+    // Stripepayment.menus.add({
+    //     title: 'My Payments',
+    //     link: 'stripepayment example page',
+    //     roles: ['authenticated'],
+    //     menu: 'main'
+    // });
 
     /**
     //Uncomment to use. Requires meanio@0.3.7 or above

@@ -10,5 +10,5 @@ exports.writeBook = function(req, res) {
 };
 
 exports.readBook = function(req, res) {
-  Storybook.findOne({name: req.bookName})
-}
+  Storybook.findOne({name: req.bookName});
+};

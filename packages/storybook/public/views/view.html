@@ -1,11 +1,20 @@
-<div class="" data-ng-controller="StorybookController">
-  <div>
-    <h1>Picture part goes here</h1>
-    <p>
-      {{package.test_data}}
-    </p>
-  </div>
-  <div>
-    <h1>Answer part goes here</h1>
-  </div>
+<div data-ng-controller="StorybookViewController">
+  <h1>{{bookName}} - Page {{bookPage}}</h1>
+  <form class="form form-horizontal">
+    <div class="form-group">
+      <textarea readonly class="form-control" rows="20">{{story}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <input readonly class="form-control" type="text" value="{{question}}">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="> Enter your answer">
+    </div>
+
+
+    <div class="form-group">
+      <button class="btn btn-lg btn-success" ng-click="submitAnswer()">Submit</button>
+    </div>
+  </form>
 </div>

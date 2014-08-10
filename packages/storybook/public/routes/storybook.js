@@ -3,12 +3,8 @@
 angular.module('mean.storybook').config(['$stateProvider',
     function($stateProvider) {
         $stateProvider
-          .state('storybook example page', {
-              url: '/storybook/example',
-              templateUrl: 'storybook/views/index.html'
-          })
           .state('view', {
-              url: '/storybook/view',
+              url: '/storybook/view/{bookId}/{bookPage}',
               templateUrl: 'storybook/views/view.html'
           })
           .state('write', {

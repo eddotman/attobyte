@@ -1,6 +1,22 @@
 <div class="" data-ng-controller="UserProfileController">
 	<h1>{{global.user.name}}</h1>
-	<p>Username: {{global.user.username}}</p>
-	<p>Email: {{global.user.email}}</p>
-	</br>
+	<hr>
+	<table class="table table-hover">
+		<tr>
+			<td>
+				Username
+			</td>
+			<td>
+				{{global.user.username}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Email
+			</td>
+			<td>
+				{{global.user.email}}
+			</td>
+		</tr>
+	</table>
 </div>

@@ -18,9 +18,16 @@ Storybook.register(function(app, auth, database) {
 
     //We are adding a link to the main menu for all authenticated users
     Storybook.menus.add({
-        title: 'My Storybooks',
-        link: 'storybook example page',
+        title: 'Storybooks',
+        link: 'list',
         roles: ['authenticated'],
+        menu: 'main'
+    });
+
+    Storybook.menus.add({
+        title: 'Write Storybook',
+        link: 'write',
+        roles: ['admin'],
         menu: 'main'
     });
 

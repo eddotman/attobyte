@@ -16,8 +16,8 @@ angular.module('mean.storybook').config(['$stateProvider',
               templateUrl: 'storybook/views/list.html'
           })
           .state('edit', {
-              url: '/storybook/edit',
-              templateUrl: 'storybook/views/edit/{bookId}.html'
+              url: '/storybook/edit/{bookId}/',
+              templateUrl: 'storybook/views/edit.html'
           });
     }
 ]);

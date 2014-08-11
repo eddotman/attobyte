@@ -2,16 +2,16 @@
   <form class="form form-horizontal">
     <div class="form-group">
       <label class="control-label">Book Title:</label>
-      <input class="form-control" type="text" ng-model="bookName">
+      <input class="form-control" type="text" ng-model="book.bookName">
     </div>
     <div class="form-group">
       <label class="control-label"># of Pages (max=20):</label>
-      <input class="form-control" type="text" ng-model="numPages" ng-pattern="/^\d+$/" ng-change="updatePages()">
+      <input class="form-control" type="text" ng-model="book.numPages" ng-pattern="/^\d+$/" ng-change="updatePages()">
     </div>
 
     <br><br>
 
-    <div ng-repeat="page in pages">
+    <div ng-repeat="page in book.pages">
       <h4>Page {{$index+1}}</h4><br>
       <div class="form-group">
         <label class="control-label">Story:</label>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-group">
-      <button class="btn btn-lg btn-success" ng-click="write()">Make Book</button>
+      <button class="btn btn-lg btn-success" ng-click="edit()">Update Book</button>
     </div>
   </form>
 </div>

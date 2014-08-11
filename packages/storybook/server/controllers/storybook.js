@@ -15,6 +15,16 @@ exports.viewBook = function(req, res) {
   });
 };
 
+exports.editBook = function(req, res) {
+  Storybook.findByIdAndUpdate(req.body.bookId, {
+      bookName: req.body.book.bookName,
+      numPages: req.body.book.numPages,
+      pages: req.body.book.pages
+    }, function(err, res) {
+    console.log(res);
+  });
+};
+
 exports.listBooks = function(req, res) {
   Storybook.find({}, function(err, storybooks){
     res.send(storybooks);

@@ -82,12 +82,43 @@ angular.module('mean.storybook')
       };
     }
   ])
-  .controller('StorybookEditController', ['$scope', 'Global', 'Storybook', '$http',
-    function($scope, Global, Storybook, $http) {
+  .controller('StorybookEditController', ['$scope', 'Global', 'Storybook', '$http', '$stateParams',
+    function($scope, Global, Storybook, $http, $stateParams) {
       $scope.global = Global;
       $scope.package = {
           name: 'storybook'
       };
 
+      $scope.bookId = $stateParams.bookId;
+
+      $scope.updatePages = function() {
+        if ($scope.numPages > 20) {$scope.numPages = 20;} //Max pages is 20
+        if ($scope.numPages > $scope.pages.length) {
+          for (var i = $scope.pages.length; i < $scope.numPages; i++) {
+            $scope.pages.push({
+              story : [],
+              question : [],
+              answer : []
+            });
+          }
+        } else if ($scope.numPages < $scope.pages.length) {
+          $scope.pages = $scope.pages.slice(0, $scope.numPages-1);
+        }
+      };
+
+      $http.post('/viewBook', {
+        bookId: $scope.bookId
+      })
+        .success(function(response) {
+          $scope.book = response;
+        });
+
+      $scope.edit = function() {
+        console.log($scope.book);
+        $http.post('/editBook', {
+          bookId: $scope.bookId,
+          book: $scope.book
+        });
+      };
     }
   ]);

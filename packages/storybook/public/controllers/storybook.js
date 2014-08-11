@@ -54,6 +54,7 @@ angular.module('mean.storybook')
 
       $scope.bookId = $stateParams.bookId;
       $scope.bookPage = $stateParams.bookPage;
+      $scope.answer = "";
 
       $http.post('/viewBook', {
         bookId: $scope.bookId
@@ -62,6 +63,16 @@ angular.module('mean.storybook')
           $scope.book = response;
           $scope.page = $scope.book.pages[$scope.bookPage-1];
         });
+
+      $scope.submitAnswer = function() {
+        var answerTrim = $scope.answer.replace(/ /g,'');
+        if (answerTrim === $scope.page.answer[0].replace(/ /g,'')) {
+          var nextPage = parseInt($scope.bookPage) + 1;
+          window.location = '/#!/storybook/view/' + $scope.bookId + '/' + nextPage;
+        }
+        console.log(answerTrim);
+        console.log($scope.page.answer[0].replace(/ /g,''));
+      };
     }
   ])
   .controller('StorybookListController', ['$scope', 'Global', 'Storybook', '$http',
@@ -114,7 +125,6 @@ angular.module('mean.storybook')
         });
 
       $scope.edit = function() {
-        console.log($scope.book);
         $http.post('/editBook', {
           bookId: $scope.bookId,
           book: $scope.book

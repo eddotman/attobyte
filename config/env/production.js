@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/mean-prod',
+  db: 'mongodb://heroku:e64TutNwTkhXSb4pv_vGyiK2g3mDSa2cM_6RA-aFlcrgsZZKIdxpaB2kcjxrPi2X0o7AM6WLnaMlOlHhmd7QtA@kahana.mongohq.com:10056/app28343880',
   app: {
     name: 'Attobyte | Learn Science and Coding'
   },

@@ -16,11 +16,10 @@
 
 
     <div class="form-group">
+    <span ng-repeat="alert in answerAlert">
+      <alert type="{{alert.type}}">{{alert.msg}} <a ng-if="alert.href" href="{{alert.href}}">{{alert.amsg}}</a></alert>
+    </span>
       <button class="btn btn-success" ng-click="submitAnswer()">Submit answer</button>
     </div>
   </form>
-  <div ng-repeat="alert in answerAlert">
-    <a href="{{alert.href}}"><alert type="success">{{alert.msg}}</alert></a>
-  </div>
-
 </div>

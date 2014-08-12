@@ -65,18 +65,20 @@ angular.module('mean.storybook')
         });
 
       $scope.submitAnswer = function() {
-         $scope.answerAlert = [];
+        $scope.answerAlert = [];
         var answerTrim = $scope.answer.replace(/ /g,'');
         var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
         if (answerTrim === bookAnswerTrim) {
           var nextPage = parseInt($scope.bookPage) + 1;
 
           if (nextPage > $scope.book.numPages) {
-            $scope.answerAlert.push({href: '/#!/', msg: 'You finished the book! Click here to go to back to the home page.'});
+            $scope.answerAlert.push({type:'success', href: '/#!/', msg: 'You finished the book!', amsg:'Return to the home page.'});
           } else {
             var nextUrl = '/#!/storybook/view/' + $scope.bookId + '/' + nextPage;
-            $scope.answerAlert.push({href: nextUrl, msg: 'Nice work! Click here to go to the next page.'});
+            $scope.answerAlert.push({type:'success', href: nextUrl, msg: 'Nice work!', amsg: 'Go to the next page.'});
           }
+        } else {
+          $scope.answerAlert.push({type:'danger', href: false, msg: 'Sorry, that is incorrect! Please try again.'});
         }
       };
     }

@@ -68,6 +68,14 @@ section {
 	padding: 15em;
 }
 
+textarea.form-control[readonly], textarea.form-control {
+	background-color: #343434 !important;
+	color: #ffffff !important;
+	cursor: allowed !important;
+	font-size: 18px !important;
+	padding: 2em !important;
+}
+
 h1, h2, h3, h4, h5 {
 	font-family: 'Oswald';
 }

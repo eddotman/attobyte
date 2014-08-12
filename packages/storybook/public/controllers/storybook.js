@@ -54,7 +54,7 @@ angular.module('mean.storybook')
 
       $scope.bookId = $stateParams.bookId;
       $scope.bookPage = $stateParams.bookPage;
-      $scope.answer = "";
+      $scope.answer = '';
 
       $http.post('/viewBook', {
         bookId: $scope.bookId
@@ -65,13 +65,21 @@ angular.module('mean.storybook')
         });
 
       $scope.submitAnswer = function() {
+         $scope.answerAlert = [];
         var answerTrim = $scope.answer.replace(/ /g,'');
-        if (answerTrim === $scope.page.answer[0].replace(/ /g,'')) {
-          var nextPage = parseInt($scope.bookPage) + 1;
-          window.location = '/#!/storybook/view/' + $scope.bookId + '/' + nextPage;
-        }
+        var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
         console.log(answerTrim);
-        console.log($scope.page.answer[0].replace(/ /g,''));
+        console.log(bookAnswerTrim);
+        if (answerTrim === bookAnswerTrim) {
+          var nextPage = parseInt($scope.bookPage) + 1;
+
+          if (nextPage > $scope.book.numPages) {
+            $scope.answerAlert.push({href: '/#!/', msg: 'You finished the book! Click here to go to back to the home page.'});
+          } else {
+            var nextUrl = '/#!/storybook/view/' + $scope.bookId + '/' + nextPage;
+            $scope.answerAlert.push({href: nextUrl, msg: 'Nice work! Click here to go to the next page.'});
+          }
+        }
       };
     }
   ])

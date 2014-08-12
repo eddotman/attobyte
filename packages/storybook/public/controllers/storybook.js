@@ -68,8 +68,6 @@ angular.module('mean.storybook')
          $scope.answerAlert = [];
         var answerTrim = $scope.answer.replace(/ /g,'');
         var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
-        console.log(answerTrim);
-        console.log(bookAnswerTrim);
         if (answerTrim === bookAnswerTrim) {
           var nextPage = parseInt($scope.bookPage) + 1;
 

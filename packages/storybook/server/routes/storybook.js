@@ -40,6 +40,9 @@ module.exports = function(Storybook, app, auth, database) {
     app.route('/viewBook')
       .post(storybook.viewBook);
 
+    app.route('/findBook')
+      .post(storybook.findBook);
+
     app.route('/editBook')
       .post(storybook.editBook);
 };

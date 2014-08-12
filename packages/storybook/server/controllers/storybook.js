@@ -15,6 +15,12 @@ exports.viewBook = function(req, res) {
   });
 };
 
+exports.findBook = function(req, res) {
+  Storybook.findOne({bookName: req.body.bookName}, function(err, storybook) {
+    res.send(storybook);
+  });
+};
+
 exports.editBook = function(req, res) {
   Storybook.findByIdAndUpdate(req.body.bookId, {
       bookName: req.body.book.bookName,

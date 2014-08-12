@@ -111,17 +111,17 @@ angular.module('mean.storybook')
       $scope.bookId = $stateParams.bookId;
 
       $scope.updatePages = function() {
-        if ($scope.numPages > 20) {$scope.numPages = 20;} //Max pages is 20
-        if ($scope.numPages > $scope.pages.length) {
-          for (var i = $scope.pages.length; i < $scope.numPages; i++) {
-            $scope.pages.push({
+        if ($scope.book.numPages > 20) {$scope.book.numPages = 20;} //Max pages is 20
+        if ($scope.book.numPages > $scope.book.pages.length) {
+          for (var i = $scope.book.pages.length; i < $scope.book.numPages; i++) {
+            $scope.book.pages.push({
               story : [],
               question : [],
               answer : []
             });
           }
-        } else if ($scope.numPages < $scope.pages.length) {
-          $scope.pages = $scope.pages.slice(0, $scope.numPages-1);
+        } else if ($scope.book.numPages < $scope.book.pages.length) {
+          $scope.book.pages = $scope.book.pages.slice(0, $scope.book.numPages-1);
         }
       };
 

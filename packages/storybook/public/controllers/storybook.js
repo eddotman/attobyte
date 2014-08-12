@@ -78,7 +78,7 @@ angular.module('mean.storybook')
             $scope.answerAlert.push({type:'success', href: nextUrl, msg: 'Nice work!', amsg: 'Go to the next page.'});
           }
         } else {
-          $scope.answerAlert.push({type:'danger', href: false, msg: 'Sorry, that is incorrect! Please try again.'});
+          $scope.answerAlert.push({type:'danger', href: false, msg: 'Sorry, your answer: "' + $scope.answer + '" is incorrect! Please try again.'});
         }
       };
     }

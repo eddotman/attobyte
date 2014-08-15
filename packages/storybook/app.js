@@ -20,7 +20,7 @@ Storybook.register(function(app, auth, database) {
     Storybook.menus.add({
         title: 'Storybooks',
         link: 'list',
-        roles: ['authenticated'],
+        roles: ['anonymous', 'authenticated'],
         menu: 'main'
     });
 

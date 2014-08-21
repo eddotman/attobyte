@@ -19,7 +19,7 @@
     <span ng-repeat="alert in answerAlert">
       <alert type="{{alert.type}}">{{alert.msg}} <a ng-if="alert.href" href="{{alert.href}}">{{alert.amsg}}</a></alert>
     </span>
-      <button class="btn btn-success" ng-click="submitAnswer()">Submit answer</button>
+      <button ng-show="submitShow" class="btn btn-success" ng-click="submitAnswer()">Submit answer</button>
     </div>
   </form>
 </div>

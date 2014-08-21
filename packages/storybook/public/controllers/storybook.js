@@ -55,6 +55,7 @@ angular.module('mean.storybook')
       $scope.bookId = $stateParams.bookId;
       $scope.bookPage = $stateParams.bookPage;
       $scope.answer = '';
+      $scope.submitShow = true;
 
       $http.post('/viewBook', {
         bookId: $scope.bookId
@@ -70,6 +71,7 @@ angular.module('mean.storybook')
         var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
         if (answerTrim === bookAnswerTrim) {
           var nextPage = parseInt($scope.bookPage) + 1;
+          $scope.submitShow = false;
 
           if (nextPage > $scope.book.numPages) {
             $scope.answerAlert.push({type:'success', href: '/#!/', msg: 'You finished the book!', amsg:'Return to the home page.'});

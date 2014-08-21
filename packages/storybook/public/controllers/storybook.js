@@ -68,6 +68,7 @@ angular.module('mean.storybook')
       $scope.submitAnswer = function() {
         $scope.answerAlert = [];
         var answerTrim = $scope.answer.replace(/ /g,'');
+        answerTrim = answerTrim.replace(/[\u2018\u2019]/g, "'"); //Fixes curly quote issue
         var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
         if (answerTrim === bookAnswerTrim) {
           var nextPage = parseInt($scope.bookPage) + 1;

@@ -15,6 +15,10 @@ angular.module('mean.storybook').config(['$stateProvider',
               url: '/storybook/list',
               templateUrl: 'storybook/views/list.html'
           })
+          .state('cta', {
+            url: '/storybook/cta',
+            templateUrl: 'storybook/views/cta.html'
+          })
           .state('edit', {
               url: '/storybook/edit/{bookId}/',
               templateUrl: 'storybook/views/edit.html'

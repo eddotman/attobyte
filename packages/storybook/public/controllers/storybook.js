@@ -45,8 +45,8 @@ angular.module('mean.storybook')
       };
     }
 ])
-  .controller('StorybookViewController', ['$scope', 'Global', 'Storybook', '$http', '$stateParams',
-    function($scope, Global, Storybook, $http, $stateParams) {
+  .controller('StorybookViewController', ['$scope', 'Global', 'Storybook', '$http', '$stateParams', '$modal',
+    function($scope, Global, Storybook, $http, $stateParams, $modal) {
       $scope.global = Global;
       $scope.package = {
           name: 'storybook'
@@ -75,7 +75,7 @@ angular.module('mean.storybook')
           $scope.submitShow = false;
 
           if (nextPage > $scope.book.numPages) {
-            $scope.answerAlert.push({type:'success', href: '/#!/', msg: 'You finished the book!', amsg:'Return to the home page.'});
+            $scope.answerAlert.push({type:'success', href: '/#!/storybook/cta', msg: 'Great job - ', amsg:'You finished the book!'});
           } else {
             var nextUrl = '/#!/storybook/view/' + $scope.bookId + '/' + nextPage;
             $scope.answerAlert.push({type:'success', href: nextUrl, msg: 'Nice work!', amsg: 'Go to the next page.'});

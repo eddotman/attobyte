@@ -68,7 +68,7 @@ angular.module('mean.storybook')
       $scope.submitAnswer = function() {
         $scope.answerAlert = [];
         var answerTrim = $scope.answer.replace(/ /g,'');
-        answerTrim = answerTrim.replace(/[\u2018\u2019]/g, "'"); //Fixes curly quote issue
+        answerTrim = answerTrim.replace(/[\u2018\u2019]/g, '\''); //Fixes curly quote issue
         var bookAnswerTrim = $scope.page.answer[0].replace(/ /g,'');
         if (answerTrim === bookAnswerTrim) {
           var nextPage = parseInt($scope.bookPage) + 1;
@@ -81,7 +81,11 @@ angular.module('mean.storybook')
             $scope.answerAlert.push({type:'success', href: nextUrl, msg: 'Nice work!', amsg: 'Go to the next page.'});
           }
         } else {
-          $scope.answerAlert.push({type:'danger', href: false, msg: 'Sorry, your answer: "' + $scope.answer + '" is incorrect! Please try again.'});
+          var wrongMsg =  'Sorry, your answer: "' + $scope.answer + '" is incorrect!';
+          if (answerTrim.split('\'').length - 1 % 2 === 1 || answerTrim.split('[').length - 1 % 2 === 1  || answerTrim.split(']').length - 1 % 2 === 1 ) {
+            wrongMsg += ' Have you double checked your brackets or quotes?';
+          }
+          $scope.answerAlert.push({type:'danger', href: false, msg: wrongMsg});
         }
       };
     }

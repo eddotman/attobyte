@@ -13,5 +13,9 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
           window.location = '/#!/storybook/view/' + $scope.bookId  + '/1';
         });
     };
+
+    $scope.storybooks = function() {
+      window.location = '/#!/storybook/list';
+    };
   }
 ]);

@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 var StorybookSchema = new Schema({
   bookName: String,
+  bookTitleImage: String,
   numPages: {
     type: Number,
     set: function (v) { return Math.round(v); }

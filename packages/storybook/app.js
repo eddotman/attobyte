@@ -16,6 +16,8 @@ Storybook.register(function(app, auth, database) {
     //We enable routing. By default the Package Object is passed to the routes
     Storybook.routes(app, auth, database);
 
+    Storybook.aggregateAsset('css','storybook.css');
+
     //We are adding a link to the main menu for all authenticated users
     Storybook.menus.add({
         title: 'Storybooks',

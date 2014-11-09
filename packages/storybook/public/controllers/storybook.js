@@ -36,7 +36,7 @@ angular.module('mean.storybook')
       $scope.write = function() {
         $http.post('/writeBook', {
           bookName: $scope.bookName,
-          bookTitleImage : $scope.bookTitleImage,
+          bookTitleImage: $scope.bookTitleImage,
           numPages: $scope.numPages,
           pages: $scope.pages
         })

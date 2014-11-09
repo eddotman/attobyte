@@ -24,6 +24,7 @@ exports.findBook = function(req, res) {
 exports.editBook = function(req, res) {
   Storybook.findByIdAndUpdate(req.body.bookId, {
       bookName: req.body.book.bookName,
+      bookTitleImage: req.body.book.bookTitleImage,
       numPages: req.body.book.numPages,
       pages: req.body.book.pages
     }, function(err, res) {

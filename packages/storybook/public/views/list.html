@@ -1,10 +1,15 @@
 <div data-ng-controller="StorybookListController">
-    <div ng-repeat="book in storybooks">
-      <h1>
-        {{book.bookName}}
-      </h1>
-      <div>
-        <button ng-click="readBook(book._id)" class="btn btn-default">Read Book</button>
+    <div class="col-lg-4" ng-repeat="book in storybooks">
+      <div class="book-block">
+        <div class="book-list-title">
+          <h3>{{book.bookName}}</h3>
+        </div>
+        <div class="book-title-image-container">
+          <img class="book-title-image" src="{{book.bookTitleImage}}">
+        </div>
+        <div>
+          <button ng-click="readBook(book._id)" class="btn btn-default book-read-button">Read Book</button>
+        </div>
       </div>
     </div>
 </div>
